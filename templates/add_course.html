@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Course</title>
+</head>
+<body>
+    <h2>📘 Add New Course</h2>
+
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% elif error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <label>Course Name:</label><br>
+        <input type="text" name="course_name" required><br><br>
+
+        <button type="submit">➕ Add Course</button>
+    </form>
+
+    <br>
+    <a href="/dashboard">← Back to Dashboard</a>
+</body>
+</html>

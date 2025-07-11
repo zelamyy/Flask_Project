@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Students</title>
+  <style>
+    .admin { color: red; font-weight: bold; }
+    .teacher { color: blue; font-weight: bold; }
+    .student { color: green; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>📋 All Registered Students</h2>
+  <table border="1">
+    <tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th></tr>
+    {% for student in students %}
+      <tr>
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td class="{{ student.role|lower }}">{{ student.role }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  <a href="/admin">⬅ Back to Admin Dashboard</a>
+</body>
+</html>
+
